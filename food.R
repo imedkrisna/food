@@ -39,12 +39,16 @@ kecil7x<-ardl(lw~lintm,data=kecil,order = c(1,1))
 
 ## Making regression table
 
+tab_model(mikro1x,file="mikro1x.html")
+tab_model(mikro2x,file="mikro2x.html")
 tab_model(mikro3x,file="mikro3x.html")
 tab_model(mikro4x,file="mikro4x.html")
 tab_model(mikro5x,file="mikro5x.html")
 tab_model(mikro6x,file="mikro6x.html")
 tab_model(mikro7x,file="mikro7x.html")
 
+tab_model(kecil1x,file="kecil1x.html")
+tab_model(kecil2x,file="kecil2x.html")
 tab_model(kecil3x,file="kecil3x.html")
 tab_model(kecil4x,file="kecil4x.html")
 tab_model(kecil5x,file="kecil5x.html")
@@ -53,11 +57,13 @@ tab_model(kecil7x,file="kecil7x.html")
 
 ## Bound F test table
 
+bm2<-bounds_f_test(mikro2x,case=2)
 bm3<-bounds_f_test(mikro3x,case=2)
 bm4<-bounds_f_test(mikro4x,case=2)
 bm5<-bounds_f_test(mikro5x,case=2)
 bm6<-bounds_f_test(mikro6x,case=2)
 bm7<-bounds_f_test(mikro7x,case=2)
+bk2<-bounds_f_test(kecil2x,case=2)
 bk3<-bounds_f_test(kecil3x,case=2)
 bk4<-bounds_f_test(kecil4x,case=2)
 bk5<-bounds_f_test(kecil5x,case=2)
