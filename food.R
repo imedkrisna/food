@@ -57,12 +57,14 @@ tab_model(kecil7x,file="kecil7x.html")
 
 ## Bound F test table
 
+bm1<-bounds_f_test(mikro1x,case=2)
 bm2<-bounds_f_test(mikro2x,case=2)
 bm3<-bounds_f_test(mikro3x,case=2)
 bm4<-bounds_f_test(mikro4x,case=2)
 bm5<-bounds_f_test(mikro5x,case=2)
 bm6<-bounds_f_test(mikro6x,case=2)
 bm7<-bounds_f_test(mikro7x,case=2)
+bk1<-bounds_f_test(kecil1x,case=2)
 bk2<-bounds_f_test(kecil2x,case=2)
 bk3<-bounds_f_test(kecil3x,case=2)
 bk4<-bounds_f_test(kecil4x,case=2)
@@ -70,12 +72,12 @@ bk5<-bounds_f_test(kecil5x,case=2)
 bk6<-bounds_f_test(kecil6x,case=2)
 bk7<-bounds_f_test(kecil7x,case=2)
 
-bm<-tibble(variable=c("log output","log value added","log value added per firm","log value added per person","log average wage"),
-            stat=c(bm3$statistic,bm4$statistic,bm5$statistic,bm6$statistic,bm7$statistic),
-       pval=c(bm3$p.value,bm4$p.value,bm5$p.value,bm6$p.value,bm7$p.value))
-bk<-tibble(variable=c("log output","log value added","log value added per firm","log value added per person","log average wage"),
-           stat=c(bk3$statistic,bk4$statistic,bk5$statistic,bk6$statistic,bk7$statistic),
-           pval=c(bk3$p.value,bk4$p.value,bk5$p.value,bk6$p.value,bk7$p.value))
+bm<-tibble(variable=c("log no of firms","log employment","log output","log value added","log value added per firm","log value added per person","log average wage"),
+            stat=c(bm1$statistic,bm2$statistic,bm3$statistic,bm4$statistic,bm5$statistic,bm6$statistic,bm7$statistic),
+       pval=c(bm1$p.value,bm2$p.value,bm3$p.value,bm4$p.value,bm5$p.value,bm6$p.value,bm7$p.value))
+bk<-tibble(variable=c("log no of firms","log employment","log output","log value added","log value added per firm","log value added per person","log average wage"),
+           stat=c(bk1$statistic,bk2$statistic,bk3$statistic,bk4$statistic,bk5$statistic,bk6$statistic,bk7$statistic),
+           pval=c(bk1$p.value,bk2$p.value,bk3$p.value,bk4$p.value,bk5$p.value,bk6$p.value,bk7$p.value))
 tab_df(bm,file="bound_mikro.html")
 tab_df(bk,file="bound_kecil.html")
 #pdb1<-ardl(lmamin~lintm,data=pdb,order=c(1,3))|>summary()
